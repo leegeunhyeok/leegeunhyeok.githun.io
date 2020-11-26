@@ -19,6 +19,7 @@ const generateGAScript = trackingId => `
 `;
 
 const publicPath = process.env.NODE_ENV === 'development' ? '/' : _Base.publicPath || '/dist';
+const themeColor = '#ffffff';
 
 module.exports = {
   productionSourceMap: false,
@@ -27,6 +28,7 @@ module.exports = {
     devtool: process.env.NODE_ENV === 'development' ? 'inline-source-map' : false,
     devServer: {
       port: '8080',
+      disableHostCheck: true,
     },
   },
   chainWebpack: config => {
@@ -41,6 +43,7 @@ module.exports = {
 
     config.plugin('html').tap(args => {
       args[0].title = _Base.title;
+      args[0].publicPath = publicPath.replace(/\/+$/, '');
       args[0].gaScript = _Base.ga ? generateGAScript(_Base.ga) : '';
       args[0].description = _Base.introText.join(' ');
       return args;
@@ -48,21 +51,24 @@ module.exports = {
   },
   pwa: {
     name: _Base.app.name,
-    themeColor: _Base.app.themeColor,
-    msTileColor: _Base.app.themeColor,
-    backgroundColor: _Base.app.themeColor,
+    themeColor,
+    msTileColor: themeColor,
+    backgroundColor: themeColor,
     appleMobileWebAppCapable: 'yes',
-    icons: {
+    iconPaths: {
+      // Auto mapping with publicPath
       favicon32: 'img/icons/favicon-32x32.png',
       favicon16: 'img/icons/favicon-16x16.png',
+      appleTouchIcon: 'img/icons/apple-touch-icon.png',
+      maskIcon: null,
+      msTileImage: null,
     },
     manifestOptions: {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      start_url: _Base.app.startUrl,
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      theme_color: themeColor,
       icons: [
-        {
-          src: 'img/icons/apple-touch-icon.png',
-          sizes: '180x180',
-          type: 'image/png',
-        },
         {
           src: 'img/icons/icon-192x192.png',
           sizes: '192x192',
