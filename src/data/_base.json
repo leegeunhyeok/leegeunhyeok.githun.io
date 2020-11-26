@@ -2,7 +2,7 @@
   "publicPath": "/dist",
   "app": {
     "name": "Résume",
-    "themeColor": "#ffffff"
+    "startUrl": "/"
   },
   "title": "Résume | Geunhyeok LEE",
   "ga": "UA-156696575-2",

@@ -4,12 +4,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dist/cover.jpg"
   },
   {
-    "revision": "73fc19a97c2901d155e5",
-    "url": "/dist/css/app.f1e0ef49.css"
+    "revision": "226b8a3ce68d77c95d9e",
+    "url": "/dist/css/app.da932461.css"
   },
   {
-    "revision": "109768101130895b2ca7",
-    "url": "/dist/css/home.33a5d786.css"
+    "revision": "bdd866389d2b32ec8ea4",
+    "url": "/dist/css/home.337a308c.css"
   },
   {
     "revision": "15e5d45a8d7c3f11157ee742310e359a",
@@ -152,6 +152,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dist/img/safari.df4e5bcd.png"
   },
   {
+    "revision": "55b547b88aa3e1b1cd1fbc24433da41b",
+    "url": "/dist/img/sample.55b547b8.jpg"
+  },
+  {
     "revision": "e6cd87dfc806132949dc7c1b23071be4",
     "url": "/dist/img/school-kr.e6cd87df.jpg"
   },
@@ -172,44 +176,44 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dist/img/simple-server.0f53f68f.jpg"
   },
   {
-    "revision": "7e291e694ac4005c9a2d346882bea443",
-    "url": "/dist/img/splash/ipad_splash.png"
-  },
-  {
-    "revision": "c9133c7f028b0e1d79bb775f9abf3999",
-    "url": "/dist/img/splash/ipadpro1_splash.png"
-  },
-  {
-    "revision": "002ab59f8b91e18d8781b9c44d4e8dc6",
-    "url": "/dist/img/splash/ipadpro2_splash.png"
-  },
-  {
-    "revision": "6c2e9dfc7dd8359d98c5a728c20f5dbd",
-    "url": "/dist/img/splash/ipadpro3_splash.png"
-  },
-  {
-    "revision": "e802f517524259192d95d45a32de0eef",
-    "url": "/dist/img/splash/iphone5_splash.png"
-  },
-  {
-    "revision": "a94bd7eea33141882f38ff15d3a32ef6",
-    "url": "/dist/img/splash/iphone6_splash.png"
+    "revision": "5fb5b5eec098c4c684ee1b01fac1471a",
+    "url": "/dist/img/splash/splash_1125x2436.png"
   },
   {
     "revision": "a3a714ce73ed677bd0b90e5d777b21c4",
-    "url": "/dist/img/splash/iphoneplus_splash.png"
-  },
-  {
-    "revision": "5fb5b5eec098c4c684ee1b01fac1471a",
-    "url": "/dist/img/splash/iphonex_splash.png"
-  },
-  {
-    "revision": "80959c007efe9fb9c2d7d879e2c64187",
-    "url": "/dist/img/splash/iphonexr_splash.png"
+    "url": "/dist/img/splash/splash_1242x2208.png"
   },
   {
     "revision": "cadebaeece97b16f1f5d2e45361849e2",
-    "url": "/dist/img/splash/iphonexsmax_splash.png"
+    "url": "/dist/img/splash/splash_1242x2688.png"
+  },
+  {
+    "revision": "7e291e694ac4005c9a2d346882bea443",
+    "url": "/dist/img/splash/splash_1536x2048.png"
+  },
+  {
+    "revision": "c9133c7f028b0e1d79bb775f9abf3999",
+    "url": "/dist/img/splash/splash_1668x2224.png"
+  },
+  {
+    "revision": "6c2e9dfc7dd8359d98c5a728c20f5dbd",
+    "url": "/dist/img/splash/splash_1668x2388.png"
+  },
+  {
+    "revision": "002ab59f8b91e18d8781b9c44d4e8dc6",
+    "url": "/dist/img/splash/splash_2048x2732.png"
+  },
+  {
+    "revision": "e802f517524259192d95d45a32de0eef",
+    "url": "/dist/img/splash/splash_640x1136.png"
+  },
+  {
+    "revision": "a94bd7eea33141882f38ff15d3a32ef6",
+    "url": "/dist/img/splash/splash_750x1334.png"
+  },
+  {
+    "revision": "80959c007efe9fb9c2d7d879e2c64187",
+    "url": "/dist/img/splash/splash_828x1792.png"
   },
   {
     "revision": "b9eaf34c7d4827a9a8c5e485a1426028",
@@ -240,23 +244,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dist/img/web.dff67d0d.svg"
   },
   {
-    "revision": "5ee24a2d85f2f6e203d320f30b467322",
+    "revision": "550237addea85bc90941a47d380fa096",
     "url": "/dist/index.html"
   },
   {
-    "revision": "73fc19a97c2901d155e5",
-    "url": "/dist/js/app.b28e6e42.js"
+    "revision": "226b8a3ce68d77c95d9e",
+    "url": "/dist/js/app.ef5286f8.js"
   },
   {
-    "revision": "7a2142883038ca150e1c",
-    "url": "/dist/js/chunk-vendors.763271e8.js"
+    "revision": "e8e92d81279fc9bda6d7",
+    "url": "/dist/js/chunk-vendors.cd58bf31.js"
   },
   {
-    "revision": "109768101130895b2ca7",
-    "url": "/dist/js/home.6137a5c2.js"
+    "revision": "bdd866389d2b32ec8ea4",
+    "url": "/dist/js/home.77760d1d.js"
   },
   {
-    "revision": "2ba8f71e1ddf8e95bf654e853903f53f",
+    "revision": "14f33595e70ed2360b2c572d57a8ee0a",
     "url": "/dist/manifest.json"
   },
   {
