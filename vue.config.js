@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const pkg = require('./package.json');
 const _Base = require('./src/data/_base.json');
 const InjectAssetsListWebpackPlugin = require('inject-assets-list-webpack-plugin');
 
@@ -18,11 +19,24 @@ const generateGAScript = trackingId => `
   </script>
 `;
 
-const publicPath = process.env.NODE_ENV === 'development' ? '/' : _Base.publicPath || '/dist';
+const outputDir = 'dist';
+const publicPath =
+  process.env.NODE_ENV === 'development'
+    ? '/'
+    : (process.env.GITHUB_PAGES ? '/dist' : _Base.publicPath) || '/dist';
 const themeColor = '#ffffff';
+
+if (process.env.GITHUB_PAGES) {
+  console.log('\n> GitHub pages build mode enabled!\n');
+  console.log('> 1. npm run build:github (current)');
+  console.log('> 2. git add .');
+  console.log('> 3. git commit -m "COMMIT MESSAGE"');
+  console.log('> 4. git push origin master"');
+}
 
 module.exports = {
   productionSourceMap: false,
+  outputDir,
   publicPath,
   configureWebpack: {
     devtool: process.env.NODE_ENV === 'development' ? 'inline-source-map' : false,
@@ -41,7 +55,18 @@ module.exports = {
         }),
       );
 
+    config.plugin('copy').tap(args => {
+      args[0].push({
+        from: path.resolve(__dirname, 'package.json'),
+        to: path.resolve(__dirname, outputDir, 'package.json'),
+      });
+      return args;
+    });
+
     config.plugin('html').tap(args => {
+      if (process.env.GITHUB_PAGES) {
+        args[0].filename = path.resolve(__dirname, 'index.html');
+      }
       args[0].title = _Base.title;
       args[0].publicPath = publicPath.replace(/\/+$/, '');
       args[0].gaScript = _Base.ga ? generateGAScript(_Base.ga) : '';
@@ -50,6 +75,29 @@ module.exports = {
     });
   },
   pwa: {
+    workboxPluginMode: 'GenerateSW',
+    workboxOptions: {
+      cacheId: 'resume_' + pkg.version,
+      exclude: [/\.html$/],
+      cleanupOutdatedCaches: true,
+      skipWaiting: true,
+      clientsClaim: true,
+      swDest: path.resolve(process.env.GITHUB_PAGES ? '.' : outputDir, 'service-worker.js'),
+      runtimeCaching: [
+        {
+          urlPattern: /index\.html/,
+          handler: 'NetworkFirst',
+        },
+        {
+          urlPattern: '/',
+          handler: 'NetworkFirst',
+        },
+        {
+          urlPattern: new RegExp('^https://cdn.jsdelivr.net(.*)'),
+          handler: 'CacheFirst',
+        },
+      ],
+    },
     name: _Base.app.name,
     themeColor,
     msTileColor: themeColor,
