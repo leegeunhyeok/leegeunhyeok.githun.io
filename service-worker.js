@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dist/precache-manifest.d779ab3b3ac6709ffe37819bf0ed2e8e.js"
+  "/dist/precache-manifest.3567173549705d4b23729d294ac99abb.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "resume_1.0.3"});
+workbox.core.setCacheNameDetails({prefix: "resume_1.0.4"});
 
 workbox.core.skipWaiting();
 
